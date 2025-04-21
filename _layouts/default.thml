@@ -29,7 +29,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-image: url('background.jpg');
+            background-image: url('https://github.com/ormisia/ormisia.github.io/blob/3a593dc981bb1499651355d77a1568d66e5f3f12/images/background.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
