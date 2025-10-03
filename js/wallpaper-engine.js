@@ -35,8 +35,8 @@ class WallpaperEngine {
 
       // 音频可视化配置
       audioViz: {
-        enable: true,
-        model: 2, // 可视化模式
+        enable: false, // 关闭音频可视化圆环
+        model: 2,
         processing: true,
         amplitude: 5,
         decline: 20,
@@ -61,8 +61,8 @@ class WallpaperEngine {
       time: {
         show: true,
         showSeconds: true,
-        x: 86,
-        y: 61,
+        x: 92, // 右上角（百分比）
+        y: 8,  // 顶部
         size: 18,
         color: 'rgba(255, 255, 255, 1)',
         blurColor: 'rgba(192, 192, 192, 0.75)',
@@ -73,9 +73,9 @@ class WallpaperEngine {
       // 日期显示配置
       date: {
         show: true,
-        x: 86,
-        y: 70,
-        size: 15,
+        x: 92, // 右上角
+        y: 15, // 时间下方
+        size: 12,
         format: 15 // 日期格式
       },
 
