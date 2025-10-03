@@ -9,6 +9,9 @@ class BackgroundSlideshow {
     this.currentIndex = 0;
     this.canvas = null;
     this.ctx = null;
+    this.audioContext = null;
+    this.audioAnalyser = null;
+    this.audioData = null;
 
     this.init();
   }
@@ -16,7 +19,21 @@ class BackgroundSlideshow {
   init() {
     this.loadImages();
     this.createCanvas();
+    this.initAudio();
     this.startRotation();
+    this.animate();
+  }
+
+  initAudio() {
+    // 初始化音频上下文（用于可视化）
+    try {
+      this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      this.audioAnalyser = this.audioContext.createAnalyser();
+      this.audioAnalyser.fftSize = 256;
+      this.audioData = new Uint8Array(this.audioAnalyser.frequencyBinCount);
+    } catch (e) {
+      console.warn('Audio API not supported');
+    }
   }
 
   loadImages() {
@@ -89,6 +106,57 @@ class BackgroundSlideshow {
 
     this.ctx.clearRect(0, 0, width, height);
     this.ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+  }
+
+  drawAudioViz() {
+    if (!this.audioAnalyser || !this.ctx) return;
+
+    this.audioAnalyser.getByteFrequencyData(this.audioData);
+
+    const { width, height } = this.canvas;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radius = 50;
+
+    this.ctx.save();
+
+    // 绘制圆环
+    const points = 120;
+    const angleStep = (Math.PI * 2) / points;
+
+    this.ctx.beginPath();
+    for (let i = 0; i < points; i++) {
+      const value = this.audioData[Math.floor(i / points * this.audioData.length)] || 0;
+      const r = radius + value * 0.5;
+      const angle = i * angleStep;
+      const x = centerX + Math.cos(angle) * r;
+      const y = centerY + Math.sin(angle) * r;
+
+      if (i === 0) {
+        this.ctx.moveTo(x, y);
+      } else {
+        this.ctx.lineTo(x, y);
+      }
+
+      // 绘制球体
+      this.ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      this.ctx.beginPath();
+      this.ctx.arc(x, y, 3, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
+
+    this.ctx.closePath();
+    this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+    this.ctx.lineWidth = 5;
+    this.ctx.globalAlpha = 0.9;
+    this.ctx.stroke();
+
+    this.ctx.restore();
+  }
+
+  animate() {
+    this.drawAudioViz();
+    requestAnimationFrame(() => this.animate());
   }
 
   startRotation() {

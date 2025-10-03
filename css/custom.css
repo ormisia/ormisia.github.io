@@ -5,7 +5,7 @@
   display: none !important;
 }
 
-/* 头像圆形显示，无旋转效果 */
+/* 头像圆形显示，完全禁止旋转效果 */
 .avatar-img {
   border-radius: 50% !important;
   overflow: hidden !important;
@@ -15,6 +15,30 @@
   border-radius: 50% !important;
   animation: none !important;
   transition: none !important;
+  transform: none !important;
+}
+
+.avatar-img:hover img {
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* 禁止所有头像相关的旋转动画 */
+@keyframes avatar-turn-around {
+  from { transform: none !important; }
+  to { transform: none !important; }
+}
+
+#aside-content .card-widget.card-info .avatar-img img {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+#aside-content .card-widget.card-info:hover .avatar-img img {
+  animation: none !important;
+  transform: none !important;
 }
 
 /* 在主页标题区域下方创建导航菜单 */
