@@ -77,8 +77,15 @@ class GlobalAudioPlayer {
       </div>
     `;
 
-    document.body.appendChild(this.playerElement);
-    this.bindEvents();
+    // 插入到页面主要内容后、footer之前
+    const waitForFooter = setInterval(() => {
+      const footer = document.querySelector('#footer');
+      if (footer) {
+        clearInterval(waitForFooter);
+        footer.parentNode.insertBefore(this.playerElement, footer);
+        this.bindEvents();
+      }
+    }, 100);
   }
 
   initAudio() {
