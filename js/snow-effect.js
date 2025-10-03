@@ -75,7 +75,8 @@ class SnowEffect {
         speed: Math.random() * (maxSpeed - minSpeed) + minSpeed,
         swing: Math.random() * 0.5 - 0.25, // 左右摆动
         swingSpeed: Math.random() * 0.01,
-        opacity: Math.random() * 0.5 + 0.3
+        opacity: Math.random() * 0.7 + 0.2, // 透明度0.2-0.9，更大范围
+        blur: Math.random() * 3 + 1 // 模糊程度1-4，制造虚实效果
       });
     }
   }
@@ -112,11 +113,10 @@ class SnowEffect {
       this.ctx.beginPath();
       this.ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
       this.ctx.fillStyle = this.config.color;
-      this.ctx.fill();
 
-      // 添加微弱的光晕效果
-      this.ctx.shadowBlur = 3;
-      this.ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
+      // 使用blur值制造虚实效果
+      this.ctx.shadowBlur = flake.blur;
+      this.ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
       this.ctx.fill();
 
       this.ctx.restore();
@@ -152,11 +152,11 @@ class SnowEffect {
     // 创建飘雪效果实例
     window.snowEffect = new SnowEffect({
       count: 100,           // 雪花数量
-      maxSize: 4,           // 最大尺寸
-      minSize: 1,           // 最小尺寸
+      maxSize: 2.5,         // 最大尺寸（减小）
+      minSize: 0.5,         // 最小尺寸（减小）
       maxSpeed: 1.5,        // 最大速度
       minSpeed: 0.3,        // 最小速度
-      color: 'rgba(255, 255, 255, 0.8)',
+      color: 'rgba(255, 255, 255, 1)',
       zIndex: 9999          // 确保在最上层
     });
   }

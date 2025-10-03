@@ -136,19 +136,31 @@ class WallpaperEngine {
   }
 
   createCanvas() {
-    // 创建全屏canvas
+    // 等待页面加载完成，找到顶部横幅区域
+    const checkBanner = setInterval(() => {
+      const banner = document.querySelector('#page-header');
+      if (banner) {
+        clearInterval(checkBanner);
+        this.setupCanvas(banner);
+      }
+    }, 100);
+  }
+
+  setupCanvas(banner) {
+    // 创建canvas覆盖在顶部横幅上
     this.canvas = document.createElement('canvas');
     this.canvas.id = 'wallpaper-canvas';
     this.canvas.style.cssText = `
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
       pointer-events: none;
     `;
-    document.body.insertBefore(this.canvas, document.body.firstChild);
+    banner.style.position = 'relative';
+    banner.appendChild(this.canvas);
 
     this.ctx = this.canvas.getContext('2d');
     this.resizeCanvas();
@@ -156,8 +168,12 @@ class WallpaperEngine {
   }
 
   resizeCanvas() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
+    if (!this.canvas) return;
+    const banner = document.querySelector('#page-header');
+    if (banner) {
+      this.canvas.width = banner.offsetWidth;
+      this.canvas.height = banner.offsetHeight;
+    }
   }
 
   loadImages() {
@@ -176,7 +192,10 @@ class WallpaperEngine {
   }
 
   drawBackground(img) {
+    if (!this.canvas || !this.ctx) return;
     const { width, height } = this.canvas;
+    if (width === 0 || height === 0) return;
+
     const imgRatio = img.width / img.height;
     const canvasRatio = width / height;
 
