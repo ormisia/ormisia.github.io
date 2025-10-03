@@ -35,7 +35,7 @@ class WallpaperEngine {
 
       // 音频可视化配置
       audioViz: {
-        enable: false, // 关闭音频可视化圆环
+        enable: true, // 开启音频可视化圆环
         model: 2,
         processing: true,
         amplitude: 5,

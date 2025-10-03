@@ -1058,6 +1058,7 @@ inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
   bottom:
+    - <script src="/js/background-slideshow.js"></script>
     - <script src="/js/wallpaper-engine.js"></script>
     - <script src="/js/snow-effect.js"></script>
     - <script src="/js/custom-nav.js"></script>
