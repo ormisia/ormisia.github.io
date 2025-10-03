@@ -5,6 +5,18 @@
   display: none !important;
 }
 
+/* 头像圆形显示，无旋转效果 */
+.avatar-img {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.avatar-img img {
+  border-radius: 50% !important;
+  animation: none !important;
+  transition: none !important;
+}
+
 /* 在主页标题区域下方创建导航菜单 */
 #page-header #site-info::after {
   content: '';
