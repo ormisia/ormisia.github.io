@@ -629,8 +629,8 @@ twikoo:
 # https://giscus.app/
 giscus:
   repo: ormisia/ormisia.github.io
-  repo_id: # 需要从 https://giscus.app/zh-CN 获取
-  category_id: # 需要从 https://giscus.app/zh-CN 获取
+  repo_id: R_kgDOOcyRDw
+  category_id: DIC_kwDOOcyRD84CwN2c
   light_theme: light
   dark_theme: dark
   mapping: pathname
