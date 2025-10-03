@@ -82,3 +82,27 @@
 .custom-nav-menu a i {
   font-size: 14px;
 }
+
+/* Footer透明化，融入背景 */
+#footer {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#footer::before {
+  background-color: transparent !important;
+}
+
+#footer .footer-flex,
+#footer .footer-other {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+#footer * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#footer a:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
