@@ -39,11 +39,15 @@ class BackgroundSlideshow {
   loadImages() {
     // 加载32张壁纸
     const imageCount = 32;
+    let firstImageLoaded = false;
+
     for (let i = 1; i <= imageCount; i++) {
       const img = new Image();
       img.src = `/images/wallpaper/${i}.jpg`;
       img.onload = () => {
-        if (this.images.length === 1) {
+        // 第一张图片加载完成后立即显示
+        if (!firstImageLoaded) {
+          firstImageLoaded = true;
           this.drawBackground(img);
         }
       };
