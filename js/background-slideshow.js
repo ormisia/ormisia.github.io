@@ -6,7 +6,7 @@
 class BackgroundSlideshow {
   constructor() {
     this.images = [];
-    this.currentIndex = 0;
+    this.currentIndex = Math.floor(Math.random() * 32); // 随机起始索引
     this.canvas = null;
     this.ctx = null;
     this.audioContext = null;
@@ -40,13 +40,14 @@ class BackgroundSlideshow {
     // 加载32张壁纸
     const imageCount = 32;
     let firstImageLoaded = false;
+    const startImageIndex = this.currentIndex; // 使用随机起始索引
 
     for (let i = 1; i <= imageCount; i++) {
       const img = new Image();
       img.src = `/images/wallpaper/${i}.jpg`;
       img.onload = () => {
-        // 第一张图片加载完成后立即显示
-        if (!firstImageLoaded) {
+        // 显示随机选择的起始图片
+        if (!firstImageLoaded && (i - 1) === startImageIndex) {
           firstImageLoaded = true;
           this.drawBackground(img);
         }
