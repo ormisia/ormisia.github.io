@@ -103,9 +103,15 @@ class GlobalAudioPlayer {
       </div>
     `;
 
-    // 固定在视口底部
-    document.body.appendChild(this.playerElement);
-    this.bindEvents();
+    // 插入到footer之前
+    const waitForFooter = setInterval(() => {
+      const footer = document.querySelector('#footer');
+      if (footer) {
+        clearInterval(waitForFooter);
+        footer.parentNode.insertBefore(this.playerElement, footer);
+        this.bindEvents();
+      }
+    }, 100);
   }
 
   initAudio() {
