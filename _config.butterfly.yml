@@ -66,7 +66,7 @@ disable_top_img: false
 default_top_img: /images/background.jpg
 
 # The banner image of index page
-index_img: /images/background.jpg
+index_img: /images/wallpaper_main.jpg
 
 # The banner image of archive page
 archive_img:
