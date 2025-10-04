@@ -2,11 +2,11 @@
 
 #global-audio-player {
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  background: transparent;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 40px 0 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .audio-player-main {

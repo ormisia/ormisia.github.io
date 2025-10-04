@@ -103,12 +103,12 @@ class GlobalAudioPlayer {
       </div>
     `;
 
-    // 插入到footer之前
+    // 插入到footer内部的最前面
     const waitForFooter = setInterval(() => {
       const footer = document.querySelector('#footer');
       if (footer) {
         clearInterval(waitForFooter);
-        footer.parentNode.insertBefore(this.playerElement, footer);
+        footer.insertBefore(this.playerElement, footer.firstChild);
         this.bindEvents();
       }
     }, 100);
