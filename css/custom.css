@@ -106,3 +106,19 @@
 #footer a:hover {
   color: rgba(255, 255, 255, 1) !important;
 }
+
+/* 隐藏归档、分类、标签、关于页面的顶部横幅 */
+body[class*="archives-page"] #page-header,
+body[class*="categories-page"] #page-header,
+body[class*="tags-page"] #page-header,
+body[class*="about-page"] #page-header {
+  display: none !important;
+}
+
+/* 调整这些页面的主内容区域顶部间距 */
+body[class*="archives-page"] #content-outer,
+body[class*="categories-page"] #content-outer,
+body[class*="tags-page"] #content-outer,
+body[class*="about-page"] #content-outer {
+  padding-top: 20px !important;
+}
