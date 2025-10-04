@@ -2,46 +2,6 @@
 <search> 
   
   
-    
-    <entry>
-      <title>我的第一篇CTF博客</title>
-      <link href="/2025/10/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87CTF%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2025/10/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87CTF%E5%8D%9A%E5%AE%A2/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>欢迎来到我的CTF学习博客！这里将记录我在CTF（Capture The Flag）学习过程中的心得体会、解题思路和技术总结。</p><h2 id="为什么学习CTF？"><a href="#为什么学习CTF？" class="headerlink" title="为什么学习CTF？"></a>为什么学习CTF？</h2><p>CTF是一种网络安全技术竞赛，通过解决各种安全挑战来提升技能。主要包括：</p><ul><li><strong>Web安全</strong>：SQL注入、XSS、CSRF等</li><li><strong>逆向工程</strong>：二进制分析、破解</li><li><strong>密码学</strong>：加密算法、密码破解</li><li><strong>PWN</strong>：二进制漏洞利用</li></ul><h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><ol><li>打好基础（编程、网络、操作系统）</li><li>选择感兴趣的方向深入学习</li><li>多做题、多总结</li><li>参加比赛积累经验</li></ol><h2 id="接下来"><a href="#接下来" class="headerlink" title="接下来"></a>接下来</h2><p>我会持续更新各类CTF题目的WriteUp和学习笔记，希望能与大家一起进步！</p><hr><p><em>Stay hungry, stay foolish!</em></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> CTF入门 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CTF </tag>
-            
-            <tag> 学习笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2025/10/04/hello-world/"/>
-      <url>/2025/10/04/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
   
   
 </search>
