@@ -2,7 +2,7 @@
 
 #global-audio-player {
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, Helvetica, sans-serif;
@@ -49,7 +49,7 @@
 .audio-title {
   font-size: 13px;
   font-weight: 500;
-  color: #333;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
@@ -58,7 +58,7 @@
 
 .audio-artist {
   font-size: 11px;
-  color: #999;
+  color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -82,14 +82,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease;
   padding: 0;
 }
 
 .audio-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: #333;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 1);
 }
 
 .audio-btn i {
@@ -129,7 +129,7 @@
 .audio-current-time,
 .audio-duration {
   font-size: 11px;
-  color: #999;
+  color: rgba(255, 255, 255, 0.7);
   min-width: 35px;
   text-align: center;
 }
@@ -151,7 +151,7 @@
   top: 50%;
   transform: translateY(-50%);
   height: 3px;
-  background: #e7e7e7;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 2px;
 }
 
@@ -161,7 +161,7 @@
   top: 50%;
   transform: translateY(-50%);
   height: 3px;
-  background: #d8d8d8;
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   width: 100%;
   pointer-events: none;
@@ -217,7 +217,7 @@
 .audio-volume-bar {
   width: 100%;
   height: 3px;
-  background: #e7e7e7;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 2px;
   position: relative;
 }
